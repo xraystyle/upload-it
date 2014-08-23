@@ -12,10 +12,7 @@ FILEPATH=`echo ${1// /\\ }`
 
 if [ -f "$FILEPATH" ]; then
 
-        cp "$FILEPATH" /tmp/$CLEANNAME
-        chmod 644 /tmp/$CLEANNAME
-        `scp /tmp/$CLEANNAME "user@example_server.com:/path/to/accessible/folder/$CLEANNAME"`
-        `rm -f /tmp/$CLEANNAME`
+        scp "$FILEPATH" "user@example_server.com:/path/to/accessible/folder/$CLEANNAME"
         URL="http://example_server.com/path/to/accessible/folder/$CLEANNAME"
         echo
         echo     "URL is:"
